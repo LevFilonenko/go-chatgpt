@@ -12,13 +12,15 @@ import (
 type ChatGPTModel string
 
 const (
-	GPT35Turbo     ChatGPTModel = "gpt-3.5-turbo"
-	GPT35Turbo0301 ChatGPTModel = "gpt-3.5-turbo-0301"
-	GPT35Turbo0631 ChatGPTModel = "gpt-3.5-turbo-0631"
-	GPT4           ChatGPTModel = "gpt-4"
-	GPT4_0314      ChatGPTModel = "gpt-4-0314"
-	GPT4_32k       ChatGPTModel = "gpt-4-32k"
-	GPT4_32k_0314  ChatGPTModel = "gpt-4-32k-0314"
+	GPT35Turbo         ChatGPTModel = "gpt-3.5-turbo"
+	GPT35Turbo_16k     ChatGPTModel = "gpt-3.5-turbo-16k"
+	GPT35Turbo0301     ChatGPTModel = "gpt-3.5-turbo-0301"
+	GPT35Turbo0613     ChatGPTModel = "gpt-3.5-turbo-0613"
+	GPT35Turbo0613_16k ChatGPTModel = "gpt-3.5-turbo-16k-0613"
+	GPT4               ChatGPTModel = "gpt-4"
+	GPT4_0314          ChatGPTModel = "gpt-4-0314"
+	GPT4_32k           ChatGPTModel = "gpt-4-32k"
+	GPT4_32k_0314      ChatGPTModel = "gpt-4-32k-0314"
 )
 
 type ChatGPTModelRole string
@@ -144,7 +146,7 @@ func validate(req *ChatCompletionRequest) error {
 		return chatgpt_errors.ErrNoMessages
 	}
 
-	if req.Model != GPT35Turbo0631 && req.Model != GPT35Turbo && req.Model != GPT35Turbo0301 && req.Model != GPT4 && req.Model != GPT4_0314 && req.Model != GPT4_32k && req.Model != GPT4_32k_0314 {
+	if req.Model != GPT35Turbo0613 && req.Model != GPT35Turbo_16k && req.Model != GPT35Turbo0613_16k && req.Model != GPT35Turbo && req.Model != GPT35Turbo0301 && req.Model != GPT4 && req.Model != GPT4_0314 && req.Model != GPT4_32k && req.Model != GPT4_32k_0314 {
 		return chatgpt_errors.ErrInvalidModel
 	}
 
