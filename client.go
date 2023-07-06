@@ -4,9 +4,8 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"github.com/LevFilonenko/go-chatgpt/utils"
 	"net/http"
-
-	"github.com/ayush6624/go-chatgpt/utils"
 )
 
 const (
